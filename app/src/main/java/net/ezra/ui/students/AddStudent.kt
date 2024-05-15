@@ -97,7 +97,7 @@ fun AddStudents(navController: NavHostController) {
                 },
 
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xff0FB06A),
+                    containerColor = Color(0xff17202a),
                     titleContentColor = Color.White,
 
                     )
@@ -106,7 +106,7 @@ fun AddStudents(navController: NavHostController) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color(0xff9AEDC9)),
+                    .background(Color(0xffb9770e)),
                 verticalArrangement = Arrangement.Center,
             ) {
                 LazyColumn {
@@ -137,68 +137,46 @@ fun AddStudents(navController: NavHostController) {
                                 photoUri = uri
                             }
 
-                            var studentName by rememberSaveable {
+                            var firstname by rememberSaveable {
                                 mutableStateOf("")
                             }
 
-                            var studentClass by rememberSaveable {
+                            var lastname by rememberSaveable {
                                 mutableStateOf("")
                             }
 
-                            var studentEmail by rememberSaveable {
+                            var number by rememberSaveable {
                                 mutableStateOf("")
                             }
 
-                            var location by rememberSaveable {
-                                mutableStateOf("")
-                            }
 
-                            var phone by rememberSaveable {
-                                mutableStateOf("")
-                            }
 
 
 
                             OutlinedTextField(
-                                value = studentName,
-                                onValueChange = { studentName = it },
-                                label = { Text(text = "Name") },
+                                value = firstname,
+                                onValueChange = { firstname = it },
+                                label = { Text(text = "FirstName") },
+                                modifier = Modifier
+                                    .padding(16.dp)
+                                    .fillMaxWidth()
+                            )
+
+
+
+                            OutlinedTextField(
+                                value = lastname,
+                                onValueChange = { lastname = it },
+                                label = { Text(text = "Last name") },
                                 modifier = Modifier
                                     .padding(16.dp)
                                     .fillMaxWidth()
                             )
 
                             OutlinedTextField(
-                                value = phone,
-                                onValueChange = { phone = it },
-                                label = { Text(text = "Phone") },
-                                modifier = Modifier
-                                    .padding(16.dp)
-                                    .fillMaxWidth()
-                            )
-
-                            OutlinedTextField(
-                                value = location,
-                                onValueChange = { location = it },
-                                label = { Text(text = "Location") },
-                                modifier = Modifier
-                                    .padding(16.dp)
-                                    .fillMaxWidth()
-                            )
-
-                            OutlinedTextField(
-                                value = studentEmail,
-                                onValueChange = { studentEmail = it },
-                                label = { Text(text = "Email") },
-                                modifier = Modifier
-                                    .padding(16.dp)
-                                    .fillMaxWidth()
-                            )
-
-                            OutlinedTextField(
-                                value = studentClass,
-                                onValueChange = { studentClass= it },
-                                label = { Text(text = "Class") },
+                                value = number,
+                                onValueChange = { number= it },
+                                label = { Text(text = "Number") },
                                 modifier = Modifier
                                     .padding(16.dp)
                                     .fillMaxWidth()
@@ -259,31 +237,24 @@ fun AddStudents(navController: NavHostController) {
 
                                         uploadImageToFirebaseStorage(
                                             it,
-                                            studentName,
-                                            studentClass,
-                                            studentEmail,
-                                            location,
-                                            phone,
-                                            context
-
-                                        )
-
-                                        studentName = ""
-                                        studentClass = ""
-                                        studentEmail = ""
-                                        location = ""
-                                        phone = ""
+                                            firstname,
+                                            lastname,
+                                            number,
+                                            context)
+                                        firstname = ""
+                                        lastname = ""
+                                        number = ""
                                         photoUri = null
 
                                     }
-                                } else if (studentClass == ""){
+                                } else if (firstname == ""){
 
                                     Toast.makeText(context, "Please enter class", Toast.LENGTH_SHORT).show()
                                 }
-                                else if (studentEmail == ""){
+                                else if (lastname == ""){
                                     Toast.makeText(context, "Please enter email", Toast.LENGTH_SHORT).show()
                                 }
-                                else if(studentName == ""){
+                                else if(number == ""){
                                     Toast.makeText(context, "Please enter name", Toast.LENGTH_SHORT).show()
                                 }
 
@@ -325,11 +296,9 @@ fun AddStudents(navController: NavHostController) {
 
 fun uploadImageToFirebaseStorage(
     imageUri: Uri,
-    studentName: String,
-    studentClass: String,
-    studentEmail: String,
-    location: String,
-    phone: String,
+    firstname: String,
+    lastname: String,
+    number: String,
     context: Context
 
 ) {
@@ -349,15 +318,8 @@ fun uploadImageToFirebaseStorage(
             val downloadUri = task.result
             saveToFirestore(
                 downloadUri.toString(),
-                studentName,
-                studentClass,
-                studentEmail,
-                location,
-                phone,
-                context,
-
-
-            )
+                firstname,
+                lastname,number,context)
 
         } else {
 
@@ -384,8 +346,6 @@ fun saveToFirestore(
     studentName: String,
     studentClass: String,
     studentEmail: String,
-    location: String,
-    phone: String,
     context: Context,
 
 
@@ -399,8 +359,6 @@ fun saveToFirestore(
         "studentName" to studentName,
         "studentClass" to studentClass,
         "studentEmail" to studentEmail,
-        "location" to location,
-        "phone" to phone
 
 
 

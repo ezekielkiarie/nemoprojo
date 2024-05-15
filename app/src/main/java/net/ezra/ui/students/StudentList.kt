@@ -46,10 +46,10 @@ import net.ezra.navigation.ROUTE_VIEW_STUDENTS
 data class Student(
 
     val imageUrl: String? = "",
-    val studentName: String? = "",
-    val studentClass: String? = "",
+    val firstname: String? = "",
+    val lastname: String? = "",
     val phone: String? = "",
-    val location: String? = ""
+
 
 
 )
@@ -113,14 +113,14 @@ fun StudentList(items: List<Student>) {
                                loading = {
                                    CircularProgressIndicator()
                                },
-                               contentDescription = item.studentName,
+                               contentDescription = item.firstname,
                                modifier = Modifier
                                    .clip(RoundedCornerShape(10))
                                    .size(150.dp)
 
                            )
 
-                        item.studentName?.let { Text(text = it) }
+                        item.firstname?.let { Text(text = it) }
                         item.phone?.let { Text(text = it) }
 
 
@@ -180,7 +180,7 @@ fun Students(navController: NavHostController, viewModel: FirestoreViewModel) {
                     }
                 },
                 colors = topAppBarColors(
-        containerColor = Color(0xff0FB06A),
+        containerColor = Color.White,
 
 
         titleContentColor = Color.White,
@@ -193,7 +193,7 @@ fun Students(navController: NavHostController, viewModel: FirestoreViewModel) {
                 modifier = Modifier
                     .padding(it)
                     .fillMaxSize()
-                    .background(Color(0xff9AEDC9)),
+                    .background(color = Color.White),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 

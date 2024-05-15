@@ -17,6 +17,7 @@ import androidx.navigation.NavController
 import com.google.firebase.auth.FirebaseAuth
 import net.ezra.R
 import net.ezra.navigation.ROUTE_ABOUT
+import net.ezra.navigation.ROUTE_ADD_STUDENTS
 import net.ezra.navigation.ROUTE_DASHBOARD
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_LOGIN
@@ -88,7 +89,7 @@ fun LoginScreen(navController: NavController, onLoginSuccess: () -> Unit) {
                             .addOnCompleteListener { task ->
                                 isLoading = false
                                 if (task.isSuccessful) {
-                                    navController.navigate(ROUTE_HOME)
+                                    navController.navigate(ROUTE_ADD_STUDENTS)
                                 } else {
                                     error = task.exception?.message ?: "Login failed"
                                 }

@@ -473,12 +473,12 @@ fun HomeScreen(navController: NavHostController) {
 
                                         val mContext = LocalContext.current
                                         OutlinedButton(onClick = {
-                                            val callIntent = Intent(Intent.ACTION_DIAL)
-                                            callIntent.data = "tel:0791329528".toUri()
-                                            mContext.startActivity(callIntent)
+                                            val simToolKitLaunchIntent =
+                                                mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                            simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                         }) {
                                             Text(
-                                                text = "Call",
+                                                text = "Pay",
                                                 color = Color.Black
                                             )
                                         }
@@ -523,12 +523,12 @@ fun HomeScreen(navController: NavHostController) {
 
                                         val mContext = LocalContext.current
                                         OutlinedButton(onClick = {
-                                            val callIntent = Intent(Intent.ACTION_DIAL)
-                                            callIntent.data = "tel:0791329528".toUri()
-                                            mContext.startActivity(callIntent)
+                                            val simToolKitLaunchIntent =
+                                                mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                            simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                         }) {
                                             Text(
-                                                text = "Call",
+                                                text = "Pay",
                                                 color = Color.Black
                                             )
                                         }
@@ -573,13 +573,12 @@ fun HomeScreen(navController: NavHostController) {
                                     ) {
 
                                         val mContext = LocalContext.current
-                                        OutlinedButton(onClick = {
-                                            val callIntent = Intent(Intent.ACTION_DIAL)
-                                            callIntent.data = "tel:0791329528".toUri()
-                                            mContext.startActivity(callIntent)
+                                        OutlinedButton(onClick = {val simToolKitLaunchIntent =
+                                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                            simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                         }) {
                                             Text(
-                                                text = "Call",
+                                                text = "Pay",
                                                 color = Color.Black
                                             )
                                         }
@@ -640,13 +639,12 @@ fun HomeScreen(navController: NavHostController) {
                                     ) {
 
                                         val mContext = LocalContext.current
-                                        OutlinedButton(onClick = {
-                                            val callIntent = Intent(Intent.ACTION_DIAL)
-                                            callIntent.data = "tel:0791329528".toUri()
-                                            mContext.startActivity(callIntent)
+                                        OutlinedButton(onClick = {val simToolKitLaunchIntent =
+                                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                            simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                         }) {
                                             Text(
-                                                text = "Call",
+                                                text = "Pay",
                                                 color = Color.Black
                                             )
                                         }
@@ -690,13 +688,12 @@ fun HomeScreen(navController: NavHostController) {
                                     ) {
 
                                         val mContext = LocalContext.current
-                                        OutlinedButton(onClick = {
-                                            val callIntent = Intent(Intent.ACTION_DIAL)
-                                            callIntent.data = "tel:0791329528".toUri()
-                                            mContext.startActivity(callIntent)
+                                        OutlinedButton(onClick = {val simToolKitLaunchIntent =
+                                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                            simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                         }) {
                                             Text(
-                                                text = "Call",
+                                                text = "Pay",
                                                 color = Color.Black
                                             )
                                         }
@@ -740,13 +737,12 @@ fun HomeScreen(navController: NavHostController) {
                                     ) {
 
                                         val mContext = LocalContext.current
-                                        OutlinedButton(onClick = {
-                                            val callIntent = Intent(Intent.ACTION_DIAL)
-                                            callIntent.data = "tel:0791329528".toUri()
-                                            mContext.startActivity(callIntent)
+                                        OutlinedButton(onClick = {val simToolKitLaunchIntent =
+                                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                            simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                         }) {
                                             Text(
-                                                text = "Call",
+                                                text = "Pay",
                                                 color = Color.Black
                                             )
                                         }
@@ -791,13 +787,12 @@ fun HomeScreen(navController: NavHostController) {
                                     ) {
 
                                         val mContext = LocalContext.current
-                                        OutlinedButton(onClick = {
-                                            val callIntent = Intent(Intent.ACTION_DIAL)
-                                            callIntent.data = "tel:0791329528".toUri()
-                                            mContext.startActivity(callIntent)
+                                        OutlinedButton(onClick = {val simToolKitLaunchIntent =
+                                            mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                            simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                         }) {
                                             Text(
-                                                text = "Call",
+                                                text = "Pay",
                                                 color = Color.Black
                                             )
                                         }
@@ -860,13 +855,12 @@ fun HomeScreen(navController: NavHostController) {
                                 ) {
 
                                     val mContext = LocalContext.current
-                                    OutlinedButton(onClick = {
-                                        val callIntent = Intent(Intent.ACTION_DIAL)
-                                        callIntent.data = "tel:0791329528".toUri()
-                                        mContext.startActivity(callIntent)
+                                    OutlinedButton(onClick = {val simToolKitLaunchIntent =
+                                        mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                        simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                     }) {
                                         Text(
-                                            text = "Call",
+                                            text = "Pay",
                                             color = Color.Black
                                         )
                                     }
@@ -910,13 +904,12 @@ fun HomeScreen(navController: NavHostController) {
                                 ) {
 
                                     val mContext = LocalContext.current
-                                    OutlinedButton(onClick = {
-                                        val callIntent = Intent(Intent.ACTION_DIAL)
-                                        callIntent.data = "tel:0791329528".toUri()
-                                        mContext.startActivity(callIntent)
+                                    OutlinedButton(onClick = {val simToolKitLaunchIntent =
+                                        mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                        simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                     }) {
                                         Text(
-                                            text = "Call",
+                                            text = "Pay",
                                             color = Color.Black
                                         )
                                     }
@@ -960,13 +953,12 @@ fun HomeScreen(navController: NavHostController) {
                                 ) {
 
                                     val mContext = LocalContext.current
-                                    OutlinedButton(onClick = {
-                                        val callIntent = Intent(Intent.ACTION_DIAL)
-                                        callIntent.data = "tel:0791329528".toUri()
-                                        mContext.startActivity(callIntent)
+                                    OutlinedButton(onClick = {val simToolKitLaunchIntent =
+                                        mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                        simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                     }) {
                                         Text(
-                                            text = "Call",
+                                            text = "Pay",
                                             color = Color.Black
                                         )
                                     }
@@ -1011,13 +1003,12 @@ fun HomeScreen(navController: NavHostController) {
                                 ) {
 
                                     val mContext = LocalContext.current
-                                    OutlinedButton(onClick = {
-                                        val callIntent = Intent(Intent.ACTION_DIAL)
-                                        callIntent.data = "tel:0791329528".toUri()
-                                        mContext.startActivity(callIntent)
+                                    OutlinedButton(onClick = {val simToolKitLaunchIntent =
+                                        mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
+                                        simToolKitLaunchIntent?.let{mContext.startActivity(it)}
                                     }) {
                                         Text(
-                                            text = "Call",
+                                            text = "pay",
                                             color = Color.Black
                                         )
                                     }
