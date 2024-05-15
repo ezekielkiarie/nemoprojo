@@ -1,5 +1,7 @@
 package net.ezra.navigation
 
+import LoginScreen
+import SignUpScreen
 import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -10,8 +12,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import net.ezra.ui.ABOUT.AboutScreen
 import net.ezra.ui.SplashScreen
-import net.ezra.ui.auth.LoginScreen
-import net.ezra.ui.auth.SignUpScreen
+//import net.ezra.ui.auth.LoginScreen
+//import net.ezra.ui.auth.SignUpScreen
 import net.ezra.ui.dashboard.DashboardScreen
 //import net.ezra.ui.auth.SignupScreen
 //import net.ezra.ui.mit.AboutScreen
@@ -32,11 +34,11 @@ fun AppNavHost(
 
 ) {
 
-
-    BackHandler {
-        navController.popBackStack()
-
-        }
+//
+//    BackHandler {
+//        navController.popBackStack()
+//
+//        }
     NavHost(
         modifier = modifier,
         navController = navController,
@@ -44,8 +46,10 @@ fun AppNavHost(
     ) {
 
 
+
+
         composable(ROUTE_LOGIN) {
-            LoginScreen(navController)
+            LoginScreen(navController = navController){}
         }
 
 

@@ -166,6 +166,7 @@ fun AboutScreen(navController: NavHostController) {
 
                                         navController.navigate(ROUTE_HOME) {
                                             popUpTo(ROUTE_ABOUT) { inclusive = true }
+
                                         }
                                     },
                                     colors = ButtonDefaults.buttonColors(Color.Black),
